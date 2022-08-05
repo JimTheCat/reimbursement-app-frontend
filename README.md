@@ -1,46 +1,35 @@
-# Getting Started with Create React App
+# Reimbursement Calculation Application
+The purpose of this app is to make claims for business trip reimbursements. It also allows administrator to change reimbursement parameters.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is somewhat a prototype because is not adapted for end user. It is missing login system and administrator panel is available for every user.
 
-## Available Scripts
+# How to use?
+On the root page there are two button. One will redirect to the admin panel and the other to add new claim.
 
-In the project directory, you can run:
+In the admin panel it is possible to change reimbursement parameters like max reimbursement limit, daily allowance and car mileage. User can also add/remove/modify types of receipts and their limits.
 
-### `yarn start`
+In the add new claim page user can pick period for which they need daily allowance, input personal car mileage and add up to five receipts choosing their type and price. The value of the receipt cannot exceed the limit for a picked type.  After every change total cost is recalculated and shown on the bottom of the form. Total cost will not exceed the maximum available reimbursement which is shown below the sum.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+# How to build application?
+After unpacking project archive open terminal and move to backend directory. To build and run backend use command:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+`mvn compile exec:java`
 
-### `yarn test`
+To run tests use command:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+`mvn clean test`
 
-### `yarn build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Next go to frontend directory. First install all dependencies using yarn:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+`yarn`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+After that you can build application using command:
 
-### `yarn eject`
+`yarn build`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Finally to start frontend use command:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+`serve -s build`
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Application can be accessed at `localhost:3000`
